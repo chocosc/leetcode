@@ -5,8 +5,11 @@ class Solution:
         #     gifts[gifts.index(max(gifts))] = int(gifts[gifts.index(max(gifts))] ** 0.5)
         # return sum(gifts)
 
-        for _ in range(k):
+        import math
+        i = 0
+        while i < k:
             gifts = sorted(gifts)
-            gifts[-1] = int(gifts[-1] ** 0.5)
-        
+            sqrt = math.floor(math.sqrt(gifts[-1]))
+            gifts[-1] = sqrt
+            i +=1
         return sum(gifts)
