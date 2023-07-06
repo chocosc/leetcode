@@ -19,15 +19,16 @@ class Solution:
             cur_node_l2 = cur_node_l2.next
         
         ans_list = []
-        ans_node = ListNode()
-        cur_node = ans_node
-
         for num in str(int(l1_str[::-1]) + int(l2_str[::-1]))[::-1]:
             ans_list.append(int(num))
 
-        for i in range(len(ans_list)):
+        ans_node = ListNode()
+        cur_node = ans_node
+        len_ans = len(ans_list)
+
+        for i in range(len_ans):
             cur_node.val = ans_list[i]
-            if i == len(ans_list)-1:
+            if i == len_ans-1:
                 break
             cur_node.next = ListNode(0)
             cur_node = cur_node.next
